@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ea89448b-ae4c-4cf0-9219-f9bde378a0df" name="Changes" comment="builds page">
+      <change beforePath="$PROJECT_DIR$/assets/css/favorite.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/favorite.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/my profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/my profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/settings.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorite.php" beforeDir="false" afterPath="$PROJECT_DIR$/favorite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/my-profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/settings.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php-8.1.27\php.exe" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2gZ4mOsFU6sCPv5ctQgE6jmb6by" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "E:/xampp/htdocs/rofls/src/actions",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\xampp\htdocs\rofls\src\actions" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-php-predefined-ba97393d7c68-b4dcf6bb9de9-com.jetbrains.php.sharedIndexes-PS-233.13135.108" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ea89448b-ae4c-4cf0-9219-f9bde378a0df" name="Changes" comment="builds page" />
+      <created>1715891923396</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715891923396</updated>
+      <workItem from="1715891924487" duration="3890000" />
+      <workItem from="1715945515981" duration="5021000" />
+      <workItem from="1716394456893" duration="2000000" />
+      <workItem from="1716544929563" duration="530000" />
+      <workItem from="1716760623692" duration="418000" />
+      <workItem from="1717092470494" duration="8983000" />
+      <workItem from="1717191767905" duration="9318000" />
+      <workItem from="1717241552423" duration="3361000" />
+      <workItem from="1717600380607" duration="7030000" />
+      <workItem from="1717680695141" duration="10414000" />
+      <workItem from="1717758124647" duration="6413000" />
+      <workItem from="1718193693746" duration="8450000" />
+      <workItem from="1718446062727" duration="4020000" />
+      <workItem from="1718544539882" duration="12179000" />
+      <workItem from="1718623261824" duration="5251000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
