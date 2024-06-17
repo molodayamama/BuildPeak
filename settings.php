@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <nav class="categories">
             <div class="best">
                 <a href="my-profile.php">Мой профиль<img src="assets/images/user.png" width="19px" class="profile"></a>
-                <a href="my-builds.php">Доб. Сборку<img src="assets/images/page orange.png" width="19px" class="builds"></a>
+                <a href="my-builds.php">Добавить сборку<img src="assets/images/page orange.png" width="19px" class="builds"></a>
                 <a href="favorite.php">Избранное<img src="assets/images/user heart.png" width="19px" class="chose"></a>
                 <a href="src/actions/logout.php">Выйти</a>
             </div>

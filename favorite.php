@@ -37,11 +37,8 @@ $likedBuilds = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <nav class="navigation">
         <a href="build-auth.php">Сборки</a>
         <a>|</a>
-        <a href="#">Форум</a>
-        <a>|</a>
         <a href="description-log.php">О нас</a>
     </nav>
-
     <div class="user-info">
         <div class="author-info" onclick="togglePopup(this)">
             <button class="nickname"><?= htmlspecialchars($currentUser['name']) ?> <img src="assets/images/Ellipse 5.png" class="userpic" width="30px"></button>
@@ -59,7 +56,7 @@ $likedBuilds = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <nav class="categories">
             <div class="best">
                 <a href="my-profile.php">Мой профиль<img src="assets/images/user.png" width="19px" class="profile"></a>
-                <a href="my-builds.php">Доб. Сборку<img src="assets/images/page orange.png" width="19px" class="builds"></a>
+                <a href="my-builds.php">Добавить сборку<img src="assets/images/page orange.png" width="19px" class="builds"></a>
                 <a href="settings.php">Настройки<img src="assets/images/user setting.png" width="19px" class="settings"></a>
             </div>
         </nav>

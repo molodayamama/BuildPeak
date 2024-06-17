@@ -48,9 +48,9 @@ $userBuilds = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <aside class="sidebar">
         <nav class="categories">
             <div class="best">
+            <a href="my-builds.php">Добавить сборку<img src="assets/images/page orange.png" width="19px" class="builds"></a>
             <a href="favorite.php">Избранное<img src="assets/images/user heart.png" width="19px" class="chose"></a>
             <a href="settings.php">Настройки<img src="assets/images/user setting.png" width="19px" class="settings"></a>
-            <a href="my-builds.php">Добавить сборку<img src="assets/images/page orange.png" width="19px" class="builds"></a>
             <a href="src/actions/logout.php">Выйти</a>
             </div>
         </nav>
