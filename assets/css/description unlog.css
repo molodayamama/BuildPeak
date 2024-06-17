@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url("../images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: scroll;
+    overflow: hidden;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 3px solid #FF7A00;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+}
+
+.logo {
+    font-weight: bold;
+    width: 240px;
+}
+
+.navigation {
+    display: flex;
+    margin-left: -620px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration:none;
+    font-weight:bold;
+    margin: 0 10px; 
+    font-size: 17px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.username {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.user-controls {
+    display: flex;
+    margin-left: 10px; 
+}
+
+.login-button{
+    width: 120px;
+    margin-right: 1.3rem;
+}
+
+.register-button{
+    width: 175px;
+    margin-right: 1.3rem;
+}
+
+.login-button:active,input[type=submit]:active
+{
+   box-shadow: 0px 0px 3px 3px #FF7A00;
+}
+
+.register-button:active,input[type=submit]:active
+{
+   box-shadow: 0px 0px 3px 3px #FF7A00;
+}
+
+.user-controls button {
+    border-color: #FF7A00;
+    border-radius: 5px;
+    color: white;
+    padding: 8px 16px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background: transparent;
+}
+
+.user-controls button:hover {
+    background-color: #FF7A00;
+}
+
+.container {
+    width: 100%;
+    max-width: 1450px;
+    max-height: 800px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 70px;
+    border: 30px solid #FF7B00;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.about-us h1 {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #FF7B00;
+    font-size: 24px;
+    border-bottom: 2px solid #FF7B00;
+    z-index: 2;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    font-size: 340%;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-weight: bolder;
+}
+
+.poly{
+    font-family:cursive;
+    font-weight:normal;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    border-top: 5px solid #444;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+}
