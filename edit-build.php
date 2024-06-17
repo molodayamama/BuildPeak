@@ -24,6 +24,8 @@ if (!$build) {
     exit;
 }
 
+$build_type = $build['build_type'] ?? 'Неизвестный тип';
+
 // Handling the form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $updateStmt = $pdo->prepare("UPDATE builds SET 
@@ -45,7 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         minus2 = :minus2,
         minus3 = :minus3,
         minus4 = :minus4,
-        year = :year
+        year = :year,
+        build_type = :build_type,      
         WHERE buildid = :build_id AND user_id = :user_id");
 
     $updateStmt->execute([
@@ -69,7 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'minus4' => $_POST['minus4'],
         'year' => $_POST['year'],
         'build_id' => $build_id,
-        'user_id' => $currentUser['id']
+        'user_id' => $currentUser['id'],
+        'build_type' => $build_type['Офисные']
     ]);
 
     header("Location: current-build.php?build_id=" . $build_id);
@@ -106,16 +110,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </header>
 <main class="main-content">
     <aside class="sidebar">
-        <nav class="categories">
-            <div class="best">
-                <a href="#"><img src="assets/images/Fire.png" width="39px" class="fire">Лучшее за 7 дней</a>
-                <a href="#"><img src="assets/images/Fire.png" width="39px" class="fire">Лучшее за 30 дней</a>
-                <a href="#"><img src="assets/images/Fire.png" width="39px" class="fire">Лучшее за год</a>
-                <a href="#"><img src="assets/images/Fire.png" width="39px" class="fire">Лучшее за всё время</a>
-                <a href="#"><img src="assets/images/Fire.png" width="39px" class="fire">Новинки</a>
-                <a href="#" class="favor"><img src="assets/images/user heart.png" width="28px" class="fire">Избранное</a>
-            </div>
-        </nav>
     </aside>
     <section class="products">
         <div class="build-main">
@@ -190,7 +184,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
         <?php endif; ?>
-        <div class="type">
+        <div class="type" style="margin-left: -20rem">
             <div class="type-item">
                 <input type="radio" id="game" name="build_type" value="Игровые" required>
                 <label for="game" class="game">Игровые</label>

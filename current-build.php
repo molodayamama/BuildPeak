@@ -25,6 +25,8 @@ if (!$build) {
     exit;
 }
 
+$buildType = $build['build_type'] ?? 'Неизвестный тип';
+
 // Handling delete action
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_build'])) {
     if ($currentUser && $currentUser['id'] == $build['author_id']) {
@@ -277,14 +279,15 @@ $comments = $commentsQuery->fetchAll(PDO::FETCH_ASSOC);
             </div>
         <?php endif; ?>
         <div class="type">
-            <div class="type-item">
-                <span class="game">Игровые</span>
-                <button id="gal"></button>
-            </div>
-            <div class="type-item">
-                <span class="office">Офисные</span>
-                <button id="gal"></button>
-            </div>
+            <?php if ($buildType == 'Игровые'): ?>
+                <div class="type-item" style="margin-left: -10rem">
+                    <span class="game">Игровые</span>
+                </div>
+            <?php elseif ($buildType == 'Офисные'): ?>
+                <div class="type-item">
+                    <span class="game">Офисные</span>
+                </div>
+            <?php endif; ?>
         </div>
     </section>
 </main>

@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea89448b-ae4c-4cf0-9219-f9bde378a0df" name="Changes" comment="builds page">
+    <list default="true" id="ea89448b-ae4c-4cf0-9219-f9bde378a0df" name="Changes" comment="builds page fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/current.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/current.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/favorite.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/favorite.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/my profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/my profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/settings.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite.php" beforeDir="false" afterPath="$PROJECT_DIR$/favorite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/my-profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/reg.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/reg.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/current-build.php" beforeDir="false" afterPath="$PROJECT_DIR$/current-build.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit-build.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit-build.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,11 +93,24 @@
       <workItem from="1718193693746" duration="8450000" />
       <workItem from="1718446062727" duration="4020000" />
       <workItem from="1718544539882" duration="12179000" />
-      <workItem from="1718623261824" duration="5251000" />
+      <workItem from="1718623261824" duration="11211000" />
     </task>
+    <task id="LOCAL-00001" summary="builds page fix">
+      <option name="closed" value="true" />
+      <created>1718631636715</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718631636715</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="builds page fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="builds page fix" />
   </component>
 </project>
