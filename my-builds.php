@@ -61,22 +61,22 @@ if ($currentUser === false) {
                         <li class="component-block">
                             <span>Процессор:</span>
                             <label>
-                                <textarea name="processor" maxlength="35"></textarea>
+                                <textarea name="processor" maxlength="35" required></textarea>
                             </label>
                         <li class="component-block">
                             <span>Видеокарта:</span>
                             <label>
-                                <textarea name="videocard" maxlength="35"></textarea>
+                                <textarea name="videocard" maxlength="35" required></textarea>
                             </label>
                         <li class="component-block">
                             <span>ОЗУ:</span>
                             <label>
-                                <textarea name="ram" maxlength="35"></textarea>
+                                <textarea name="ram" maxlength="35" required></textarea>
                             </label>
                         <li class="component-block">
                             <span>Материнская плата:</span>
                             <label>
-                                <textarea name="motherboard" maxlength="35"></textarea>
+                                <textarea name="motherboard" maxlength="35" required></textarea>
                             </label>
                         <li class="component-block">
                             <span>Система охлаждения:</span>

@@ -213,9 +213,19 @@ body {
     background: #f9f9f9;
 }
 
+.input-group textarea {
+    width: 700px;
+    height: 150px;
+    padding: 8px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    background: #f9f9f9;
+    resize: none;
+}
+
 .photo-group{
     margin-left: 57rem;
-    margin-top: -21rem;
+    margin-top: -29rem;
     width: 300px;
 }
 
@@ -259,17 +269,19 @@ body {
     margin-left: 0;
 }
 
-#button1 {
-    width: 150px;
+.button1 {
+    width: 300px;
     padding: 10px 20px;
     border-radius: 30px;
     background-color: #FF7A00;
     color: white;
     cursor: pointer;
     border: none;
+    text-align: center;
     margin: 0 -920px;
     max-height: 42px;
-    margin-left: 0rem;
+    margin-left: 0;
+    margin-top: 18px;
 }
 
 .button2 {

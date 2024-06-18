@@ -10,7 +10,13 @@ if ($currentUser === false) {
 
 // Fetch builds added by the current user
 $pdo = getPDO();
-$stmt = $pdo->prepare("SELECT * FROM builds WHERE user_id = :user_id");
+$stmt = $pdo->prepare("
+    SELECT builds.*, COUNT(likes.build_id) AS likes_count
+    FROM builds
+    LEFT JOIN likes ON builds.buildid = likes.build_id
+    WHERE builds.user_id = :user_id
+    GROUP BY builds.buildid
+");
 $stmt->execute(['user_id' => $currentUser['id']]);
 $userBuilds = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -86,7 +92,7 @@ $userBuilds = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             Автор: <?= htmlspecialchars($currentUser['name']) ?>
                         </div>
                         <div class="likes">
-                            Количество лайков:
+                            Количество лайков: <?= htmlspecialchars($build['likes_count']) ?>
                         </div>
                     </div>
                     <div class="card-section right">

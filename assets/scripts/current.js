@@ -160,7 +160,7 @@ window.onclick = function (event) {
 function updateCharCount() {
   const textarea = document.getElementById('desc');
   const charCount = document.getElementById('charCount');
-  charCount.textContent = `${textarea.value.length}/380`;
+  charCount.textContent = `${textarea.value.length}/300`;
 }
 
 function getCommentWord(count) {
@@ -245,3 +245,14 @@ function adjustTextareaHeight(textarea) {
 document.getElementById('commentInput').addEventListener('input', function () {
   adjustTextareaHeight(this);
 });
+
+
+document.getElementById('buildImage').addEventListener('change', function(event) {
+  const [file] = event.target.files;
+  if (file) {
+    const imagePreview = document.getElementById('imagePreview');
+    imagePreview.src = URL.createObjectURL(file);
+    imagePreview.style.display = 'block';
+  }
+});
+

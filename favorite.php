@@ -64,7 +64,7 @@ $likedBuilds = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <section class="products">
         <a class="favorite"><img src="assets/images/favorite.png" alt="Иконка" class="favorite-icon">Избранное</a>
         <?php if (!empty($likedBuilds)): ?>
-            <?php foreach ($likedBuilds as $build): ?>
+            <?php foreach (array_reverse($likedBuilds) as $build): ?>
                 <div class="product-card">
                     <div class="card-section left">
                         <img src="<?= htmlspecialchars($build['picture']) ?>" alt="Изображение сборки" class="pcimage">

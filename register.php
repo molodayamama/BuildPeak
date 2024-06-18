@@ -18,9 +18,6 @@ require_once __DIR__ . '/src/helpers.php'
                 <input type="text" placeholder="Имя" name="name" required>
                 <input type="email" placeholder="Email" name="email" required>
                 <input type="password" placeholder="Пароль" name="password" required>
-                <label for="remember-me">
-                    <input type="checkbox" id="remember-me" name="remember-me"> Запомнить меня
-                </label>
                 <button type="submit" class="register">Зарегистрироваться</button>
             </form>
             <div class="akk">

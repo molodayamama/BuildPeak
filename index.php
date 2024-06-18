@@ -24,12 +24,12 @@ $currentUser = currentUser();
         </div>
         <?php if ($currentUser === false) { ?>
             <div class="search-and-buttons">
-                <form action="register.php" method="post" class="profile">
+                <form action="register.php" method="post">
                     <button class="profile">
                         <bold>Регистрация</bold>
                     </button>
                 </form>
-                <form action="login.php" method="post" class="profile">
+                <form action="login.php" method="post">
                     <button class="profile">
                         <bold>Вход</bold>
                     </button>
@@ -48,7 +48,7 @@ $currentUser = currentUser();
 </header>
 <main>
     <section class="hero">
-        <div class="hero-content">
+        <form action="build-auth.php" class="hero-content">
             <h1>Цифровое <p>ПОРТФОЛИО</p>
             </h1>
             <h2>для публикации ваших <p>сборок ПК</p>
@@ -56,8 +56,8 @@ $currentUser = currentUser();
             <img src="assets/images/Line 2.png" alt="line" class="vector" />
             <p class="description">Сайт предлагает всё необходимое для публикации ваших сборок персональных
                 компьютеров, их характеристик, а также тестов в различных сферах</p>
-            <button href="build-auth.php" class="cta-button">Оставить работы</button>
-        </div>
+            <button class="cta-button">Оставить работы</button>
+        </form>
     </section>
     <img src="assets/images/pc21.png" alt="Comp" class="pc">
     <section class="stats">

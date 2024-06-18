@@ -16,3 +16,12 @@ window.onclick = function(event) {
       popup.style.display = "none";
   }
 }
+
+document.getElementById('avatar').addEventListener('change', function(event) {
+    const [file] = event.target.files;
+    if (file) {
+        const imagePreview = document.getElementById('imagePreview');
+        imagePreview.src = URL.createObjectURL(file);
+        imagePreview.style.display = 'block';
+    }
+});

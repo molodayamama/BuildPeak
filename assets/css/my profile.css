@@ -306,15 +306,16 @@ body {
     font-weight: bolder;
     color: #FFFFFF;
     margin-bottom: -10rem;
-    margin-left: -8rem;
+    margin-left: -6rem;
 }
 
 .product-details {
-    width: 350px;
+    width: 300px;
     text-align: left;
 }
 
 .product-title {
+    margin-top: 30px;
     font-size: 26px;
     font-weight: bold;
     color: #333; 

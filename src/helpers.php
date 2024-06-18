@@ -13,6 +13,8 @@ function redirect(string $path)
 function logout(): void
 {
     unset($_SESSION['user']);
+    // Удалите cookie "remember me"
+    setcookie('remember_me', '', time() - 3600, "/");
     redirect('/');
 }
 
@@ -55,6 +57,18 @@ function currentUser(): array|false
 {
     $pdo = getPDO();
 
+    if (!isset($_SESSION['user']) && isset($_COOKIE['remember_me'])) {
+        $userId = $_COOKIE['remember_me'];
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE `id` = :id");
+        $stmt->execute(['id' => $userId]);
+        $user = $stmt->fetch(\PDO::FETCH_ASSOC);
+        if ($user) {
+            $_SESSION['user']['id'] = $user['id'];
+        } else {
+            return false;
+        }
+    }
+
     if(!isset($_SESSION['user'])) {
         return false;
     }
@@ -68,15 +82,7 @@ function currentUser(): array|false
     if ($user) {
         return $user;
     } else {
-        // Пользователь не найден в базе данных, возможно, его удалили
-        // Можно очистить сессию и вернуть false
         unset($_SESSION['user']);
         return false;
     }
 }
-
-
-
-
-
-

@@ -177,7 +177,6 @@ $comments = $commentsQuery->fetchAll(PDO::FETCH_ASSOC);
                     <label for="desc">
                         <textarea readonly id="desc"><?= htmlspecialchars($build['description']) ?></textarea>
                     </label>
-                    <p id="charCount">0/300</p>
                 </div>
                 <div class="plus">
                     <h2>Плюсы сборки:</h2>
@@ -278,17 +277,18 @@ $comments = $commentsQuery->fetchAll(PDO::FETCH_ASSOC);
                 </form>
             </div>
         <?php endif; ?>
-        <div class="type">
+        <div class="type" style="margin-left: <?php echo ($currentUser && $currentUser['id'] == $build['author_id']) ? '-40rem' : '-10rem'; ?>">
             <?php if ($buildType == 'Игровые'): ?>
-                <div class="type-item" style="margin-left: -10rem">
+                <div class="type-item" style="margin-left: <?php echo ($currentUser && $currentUser['id'] == $build['author_id']) ? '0rem' : '-10rem'; ?>">
                     <span class="game">Игровые</span>
                 </div>
             <?php elseif ($buildType == 'Офисные'): ?>
-                <div class="type-item">
+                <div class="type-item" style="margin-left: <?php echo ($currentUser && $currentUser['id'] == $build['author_id']) ? '0rem' : '-10rem'; ?>">
                     <span class="game">Офисные</span>
                 </div>
             <?php endif; ?>
         </div>
+
     </section>
 </main>
 <script src="assets/scripts/current.js"></script>

@@ -19,7 +19,13 @@ if ($profileUser === false) {
 }
 
 // Fetch builds added by the user
-$buildStmt = $pdo->prepare("SELECT * FROM builds WHERE user_id = :user_id");
+$buildStmt = $pdo->prepare("
+    SELECT builds.*, COUNT(likes.build_id) AS likes_count
+    FROM builds
+    LEFT JOIN likes ON builds.buildid = likes.build_id
+    WHERE builds.user_id = :user_id
+    GROUP BY builds.buildid
+");
 $buildStmt->execute(['user_id' => $userId]);
 $userBuilds = $buildStmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -72,7 +78,7 @@ $currentUser = currentUser();
         <nav class="categories">
             <div class="best">
                 <a href="my-profile.php">Мой профиль<img src="assets/images/user.png" width="19px" class="profile"></a>
-                <a href="my-builds.php">Доб. Сборку<img src="assets/images/page orange.png" width="19px" class="builds"></a>
+                <a href="my-builds.php">Добавить сборку<img src="assets/images/page orange.png" width="19px" class="builds"></a>
                 <a href="favorite.php">Избранное<img src="assets/images/user heart.png" width="19px" class="chose"></a>
                 <a href="settings.php">Настройки<img src="assets/images/user setting.png" width="19px" class="settings"></a>
                 <a href="src/actions/logout.php">Выйти</a>
@@ -110,7 +116,7 @@ $currentUser = currentUser();
                             Автор: <?= htmlspecialchars($profileUser['name']) ?>
                         </div>
                         <div class="likes">
-                            Количество лайков:
+                            Количество лайков: <?= htmlspecialchars($build['likes_count']) ?>
                         </div>
                     </div>
                     <div class="card-section right">

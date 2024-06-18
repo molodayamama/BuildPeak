@@ -119,16 +119,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="input-group">
                 <label for="about">⠀⠀О себе</label>
-                <textarea id="about" name="about" class="input-group"><?= htmlspecialchars($currentUser['about']) ?></textarea>
-            </div>
-            <div class="input-group">
-                <label for="avatar">Аватарка</label>
-                <input type="file" id="button1" name="avatar">
+                <textarea id="about" name="about"><?= htmlspecialchars($currentUser['about']) ?></textarea>
             </div>
             <button id="orange" type="submit">Сохранить изменения</button>
             <div class="photo-group">
                 <label class="photo">Фото</label>
-                <img src="<?= htmlspecialchars($currentUser['avatar'] ?: 'assets/images/Ellipse 5.png') ?>" class="photo-box" alt="Аватарка">
+                <img src="<?= htmlspecialchars($currentUser['avatar'] ?: 'assets/images/Ellipse 5.png') ?>"
+                     class="photo-box" alt="Аватарка" id="imagePreview">
+                <label for="avatar" class="button1" style="color: white">Загрузить</label>
+                <input type="file" name="avatar" id="avatar" style="display: none">
             </div>
         </form>
     </section>

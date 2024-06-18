@@ -16,6 +16,7 @@ body {
     background-attachment: scroll;
     overflow-x: hidden;
     overflow: hidden;
+    overflow-y: hidden;
 }
 
 textarea:focus, input:focus {
@@ -175,19 +176,6 @@ li {
     margin-top: 1rem;
 }
 
-.build-name textarea{
-    border: transparent;
-    background: transparent;
-    resize: none;
-    font-size: 19px;
-    height: 25px;
-    vertical-align: middle;
-}
-
-.build-name h1 textarea{
-    margin-left: 7px;
-}
-
 .compl {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -205,16 +193,17 @@ li {
 }
 
 .component-block {
-    position: relative;
     background-color: white;
     padding: 7px;
+    padding-bottom: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
-    border: 2px solid #FF7A00;
-    height: 63px;
+    border: 1px solid #FF7A00;
+    height: 60px;
 }
 
 .component-block span {
+    margin-top: -10px;
     font-size: 74%;
     padding-left: 10px;
     color: #797979;
@@ -224,13 +213,15 @@ li {
     padding-left: 10px;
     margin-top: 50px;
     width: 100%;
-    height: 65%;
+    height: 70%;
+    border-radius: 5px;
     border: transparent;
     resize: none;
     margin-top: -1px;
     color: #000000;
     font-size: 19px;
     font-weight: bold;
+    border-bottom: #FF7A00;
 }
 
 .build-description {
@@ -276,7 +267,7 @@ li {
     border-radius: 25px;
 }
 
-.square img {
+.square img{
     width: 100%;
     height: 100%;
     border-radius: 25px;
@@ -289,9 +280,55 @@ li {
 .product-card {
     position: relative;
     margin-top: -10rem;
-    margin-left: -20rem;
+    margin-left: -83rem;
 }
 
+.button1 {
+    width: 150px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: #FF7A00;
+    color: white;
+    cursor: pointer;
+    border: none;
+    margin: 0 -920px;
+    max-height: 42px;
+    margin-left: 68rem;
+    margin-top: -64rem;
+}
+
+.button2 {
+    position: absolute;
+    width: 270px;
+    height: 60px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: #26BA01;
+    color: white;
+    cursor: pointer;
+    border: none;
+    margin: 0 -920px;
+    margin-left: 68rem;
+    margin-top: -17rem;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.button1:hover {
+    background-color: #e56b00;
+}
+
+.button2:hover {
+    background-color: #e56b00;
+}
+
+.button1:active, input[type=submit]:active {
+    box-shadow: 0px 0px 3px 3px #FF7A00;
+}
+
+.button2:active, input[type=submit]:active {
+    box-shadow: 0px 0px 3px 3px #FF0000;
+}
 
 .pcimage {
     width: 100%;
@@ -337,98 +374,6 @@ li {
     font-weight: bolder;
 }
 
-.comments-section {
-    position: relative;
-    position: fixed;
-    margin-left: -28rem;
-    margin-top: 36rem;
-    background-color: transparent;
-    padding: 20px;
-    border: transparent;
-    width: 150%;
-}
-
-.comments-section h2 {
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.comments-section ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
-}
-
-.comments-section ul li {
-    display: flex;
-    align-items: flex-start;
-    background-color: transparent;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    word-wrap: break-word;
-    max-width: 100%;
-}
-
-.userpic-comment {
-    margin-right: 10px;
-    border-radius: 50%;
-}
-
-.comment-input-area {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    border-bottom: 2px solid black;
-    color: #676767;
-}
-
-.comment-input-area img {
-    margin-right: 10px;
-    margin-left: -3rem;
-    margin-bottom: -1rem;
-}
-
-#commentInput {
-    width: 100%;
-    height: 50px;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    resize: none;
-    font-size: 18px;
-    line-height: 20px;
-    background: transparent;
-    color: #676767;
-    margin-bottom: -1rem;
-    overflow-y: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
-.comments-section button {
-    font-weight: bold;
-    width: 19%;
-    height: 40px;
-    padding: 10px 20px;
-    border-radius: 20px;
-    background-color: #FF7A00;
-    color: #000000;
-    cursor: pointer;
-    border: none;
-    margin-left: 60rem;
-    margin-top: 10px;
-}
-
-#commentCount{
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.comments-section button:hover {
-    background-color: #e56b00;
-}
-
 .likeButton {
     transition: transform 0.2s;
     cursor: pointer;
@@ -436,22 +381,6 @@ li {
     max-height: 45px;
     margin-left: -1rem;
     margin-right: 1rem;
-}
-
-.commentLikeButton {
-    transition: transform 0.2s;
-    cursor: pointer;
-    max-width: 45px;
-    max-height: 45px;
-    margin-left: -1rem;
-    margin-right: 1rem;
-}
-
-.commentunLikeButton {
-    transition: transform 0.2s;
-    cursor: pointer;
-    max-width: 45px;
-    max-height: 45px;
 }
 
 .likeButton:hover {
@@ -465,36 +394,17 @@ li {
     max-height: 45px;
 }
 
-.heart-icon{
-    margin-top: 20rem;
-    margin-right: 8rem;
-    margin-left: -3.5rem;
-}
-
 .unlikeButton:hover {
     transform: scale(1.3);
 }
 
-.heart:hover {
-    transform: scale(1.1);
-}
-
-.heart-icon, .thumb-up, .thumb-down {
+.thumb-up, .thumb-down {
     cursor: pointer;
     position: relative;
 }
 
 .thumb-up, .thumb-down {
     transform: translate(5rem, 7rem);
-}
-
-.comment-item p {
-    word-break: break-word;
-    white-space: pre-wrap;
-}
-
-.comment-item{
-    margin-top: 3rem;
 }
 
 .type {
@@ -504,6 +414,7 @@ li {
     flex-direction: column;
     align-items: flex-start;
     width: 200px;
+    margin-left: -19rem;
     margin-top: 30rem;
 }
 
@@ -536,6 +447,7 @@ li {
     border-radius: 6px;
     vertical-align:middle;
     margin-left: -3rem;
+    cursor: pointer;
 }
 
 .background-checked {
@@ -554,28 +466,6 @@ li {
     transform: translate(-50%, -50%);
     font-size: 22px;
     color: #FFFFFF;
-}
-
-.edit {
-    transform: translate(700px, 780px);
-    display: flex;
-    flex-direction: column;
-    height: 500px;
-}
-
-.edit-item {
-    display: flex;
-    margin-bottom: 1rem;
-}
-
-.edit-item a {
-    margin-left: -21px;
-}
-
-.edit-item img {
-    vertical-align: middle;
-    margin-right: 29px;
-    margin-left: -10px;
 }
 
 #orange {
@@ -598,82 +488,4 @@ li {
 
 #orange img {
     margin-right: 10px;
-}
-
-#red {
-    width: 200px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 25px;
-    border: 2px solid #FF0000;
-    background-color: #fff;
-    cursor: pointer;
-    margin-right: 120px;
-}
-
-
-#orange:hover {
-    transform: scale(1.05);
-}
-
-#red:hover {
-    transform: scale(1.05);
-}
-
-#orange:active {
-    border-color: #FF7A00;
-    transform: scale(0.95);
-}
-
-#red:active {
-    border-color: #990000;
-    transform: scale(0.95);
-}
-
-.like-count {
-    margin-left: -15px;
-}
-
-.user-controls {
-    display: flex;
-    margin-left: 10px;
-}
-
-.login-button{
-    width: 120px;
-    margin-right: 1.3rem;
-}
-
-.register-button{
-    width: 175px;
-    margin-right: 1.3rem;
-}
-
-.login-button:active,input[type=submit]:active
-{
-    box-shadow: 0px 0px 3px 3px #FF7A00;
-}
-
-.register-button:active,input[type=submit]:active
-{
-    box-shadow: 0px 0px 3px 3px #FF7A00;
-}
-
-.user-controls button {
-    border-color: #FF7A00;
-    border-radius: 5px;
-    color: white;
-    padding: 8px 16px;
-    margin-left: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    background: transparent;
-}
-
-.user-controls button:hover {
-    background-color: #FF7A00;
 }
