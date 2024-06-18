@@ -278,11 +278,12 @@ li {
 
 .product-card {
     position: relative;
-    margin-top: -10rem;
-    margin-left: -83rem;
+    transform: translate(-485px, -90px);
+    width: 150px;
 }
 
 .button1 {
+    display: inline-block;
     width: 150px;
     padding: 10px 20px;
     border-radius: 30px;
@@ -290,10 +291,9 @@ li {
     color: white;
     cursor: pointer;
     border: none;
-    margin: 0 -920px;
     max-height: 42px;
-    margin-left: 68rem;
-    margin-top: -64rem;
+    text-align: center;
+    margin-top: -5px;
 }
 
 .button2 {
@@ -306,9 +306,8 @@ li {
     color: white;
     cursor: pointer;
     border: none;
-    margin: 0 -920px;
-    margin-left: 68rem;
-    margin-top: -17rem;
+    margin-left: 40.5rem;
+    margin-top: -21rem;
     font-weight: bolder;
     font-size: 30px;
 }

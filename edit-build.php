@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'hdd' => $_POST['hdd'],
         'ssd' => $_POST['ssd'],
         'power' => $_POST['power'],
-        'description' => $_POST['description'],
+        'description' => trim($_POST['description']),
         'plus1' => $_POST['plus1'],
         'plus2' => $_POST['plus2'],
         'plus3' => $_POST['plus3'],
@@ -173,7 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <p class="desc">Описание</p>
                     <label for="desc">
                         <textarea id="desc" name="description" style="padding: 10px; resize: none" oninput="updateCharCount()" maxlength="300">
-                            <?= htmlspecialchars($build['description']) ?>
+                            <?= htmlspecialchars(trim($build['description'])) ?>
                         </textarea>
                     </label>
                     <p id="charCount">0/300</p>
@@ -198,7 +198,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="product-card">
                 <label for="buildImage" class="button1">+ Загрузить</label>
-                <input type="file" name="buildImage" id="buildImage">
+                <input type="file" name="buildImage" id="buildImage" style="display: none">
             </div>
         </div>
         <?php if (!empty($build['picture'])): ?>
