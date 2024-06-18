@@ -8,6 +8,7 @@ require_once __DIR__ . '/src/helpers.php'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
     <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="shortcut icon" href="assets/images/logo1%201.png">
 </head>
 <body>
     <a href="index.php"><img src="/assets/images/logo 1.svg" width="182" height="49" class="logo"></a>

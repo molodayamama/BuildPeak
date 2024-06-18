@@ -28,6 +28,7 @@ $userBuilds = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мой Профиль</title>
     <link rel="stylesheet" href="assets/css/my profile.css">
+    <link rel="shortcut icon" href="assets/images/logo1%201.png">
 </head>
 <body>
 <header class="header">

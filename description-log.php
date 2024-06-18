@@ -12,6 +12,7 @@ $currentUser = currentUser();
     <title>О нас</title>
     <link rel="stylesheet" href="assets/css/description log.css">
     <link rel="stylesheet" href="assets/css/description unlog.css">
+    <link rel="shortcut icon" href="assets/images/logo1%201.png">
 </head>
 <body>
     <header class="header">

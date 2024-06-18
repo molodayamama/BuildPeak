@@ -11,7 +11,8 @@ $currentUser = currentUser();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BuildPeak</title>
-    <link href="assets/css/index.css" rel="stylesheet" >
+    <link href="assets/css/index.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/logo1%201.png">
 </head>
 <body>
 <header class="site-header">

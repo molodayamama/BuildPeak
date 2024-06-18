@@ -109,6 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Редактирование сборки</title>
     <link rel="stylesheet" href="assets/css/edit.css">
+    <link rel="shortcut icon" href="assets/images/logo1%201.png">
 </head>
 <body>
 <header class="header">

@@ -8,6 +8,7 @@ require_once __DIR__ . '/src/helpers.php'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход</title>
     <link rel="stylesheet" href="assets/css/vhod.css">
+    <link rel="shortcut icon" href="assets/images/logo1%201.png">
 </head>
 
 <body>

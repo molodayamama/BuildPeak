@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea89448b-ae4c-4cf0-9219-f9bde378a0df" name="Changes" comment="build add fix">
-      <change afterPath="$PROJECT_DIR$/uploads/b192fe6db5c8f106cb6036a8dcd79ad60f326c174816a5e427f4733e31a85b66.jpg-ezgif.com-webp-to-png-converter.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/buildadd.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/buildadd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/build-auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/current-build.php" beforeDir="false" afterPath="$PROJECT_DIR$/current-build.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description-log.php" beforeDir="false" afterPath="$PROJECT_DIR$/description-log.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit-build.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit-build.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorite.php" beforeDir="false" afterPath="$PROJECT_DIR$/favorite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-builds.php" beforeDir="false" afterPath="$PROJECT_DIR$/my-builds.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/my-profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/user-profile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +100,7 @@
       <workItem from="1718446062727" duration="4020000" />
       <workItem from="1718544539882" duration="12179000" />
       <workItem from="1718623261824" duration="12444000" />
-      <workItem from="1718710912808" duration="16719000" />
+      <workItem from="1718710912808" duration="17479000" />
     </task>
     <task id="LOCAL-00001" summary="builds page fix">
       <option name="closed" value="true" />
@@ -148,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718730487754</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="build add fix">
+      <option name="closed" value="true" />
+      <created>1718730498888</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1718730498888</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

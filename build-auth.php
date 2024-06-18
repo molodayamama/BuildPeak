@@ -17,6 +17,7 @@ $buildType = $_GET['build_type'] ?? null;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сборки</title>
     <link rel="stylesheet" href="assets/css/reg.css">
+    <link rel="shortcut icon" href="assets/images/logo1%201.png">
 </head>
 <body>
 <header class="header">
