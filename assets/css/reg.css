@@ -285,7 +285,7 @@ body {
     cursor: pointer;
     font-weight: bolder;
     margin-top: 20px;
-    transform: translate(860px,-30px);
+    transform: translate(933px,-15px);
     border-radius: 10px;
     width: 130px;
     height: 30px;
@@ -307,7 +307,8 @@ input[type="number"] {
 
 .filter-inputs{
     color: #000000;
-    transform: translate(30px,-55px);
+    transform: translate(0px,-55px);
+    width: 300px;
 }
 
 .tagspic{
@@ -361,22 +362,12 @@ input[type="number"] {
     text-decoration: none;
     border: none;
 
-    margin: 10px;
-    margin-top: 10px;
-    margin-left: -250px;
+    transform: translate(58px,0px);
 }
 
 .delete img {
     vertical-align: middle;
     margin-right: 5px;
-}
-
-.delete:hover{
-    transform: scale(1.05);
-}
-
-.delete:active{
-    transform: scale(0.95);
 }
 
 .products {
@@ -517,4 +508,8 @@ input[type="number"] {
     position: relative;
     bottom: 15px;
     right: 5px;
+}
+
+.apply-filters {
+    display: none;
 }

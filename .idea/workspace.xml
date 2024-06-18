@@ -4,38 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea89448b-ae4c-4cf0-9219-f9bde378a0df" name="Changes" comment="builds page fix">
-      <change afterPath="$PROJECT_DIR$/assets/css/edit.css" afterDir="false" />
+    <list default="true" id="ea89448b-ae4c-4cf0-9219-f9bde378a0df" name="Changes" comment="added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/current.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/current.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/description log.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/description log.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/favorite.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/favorite.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/my profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/my profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/edit.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/my-built.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/my-built.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/reg.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/reg.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/settings.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scripts/current.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scripts/current.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scripts/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scripts/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/current-build.php" beforeDir="false" afterPath="$PROJECT_DIR$/current-build.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/build-auth.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/edit-build.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit-build.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite.php" beforeDir="false" afterPath="$PROJECT_DIR$/favorite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-builds.php" beforeDir="false" afterPath="$PROJECT_DIR$/my-builds.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/my-profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/0hetagRoflan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/End.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/Rinne.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/Wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/bird-ezgif.com-optimize.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/jewjewjew.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/user-profile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +94,7 @@
       <workItem from="1718446062727" duration="4020000" />
       <workItem from="1718544539882" duration="12179000" />
       <workItem from="1718623261824" duration="12444000" />
-      <workItem from="1718710912808" duration="10123000" />
+      <workItem from="1718710912808" duration="13605000" />
     </task>
     <task id="LOCAL-00001" summary="builds page fix">
       <option name="closed" value="true" />
@@ -136,7 +112,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718648455446</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="big fixes">
+      <option name="closed" value="true" />
+      <created>1718723317370</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718723317370</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added">
+      <option name="closed" value="true" />
+      <created>1718723340170</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718723340170</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +136,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="builds page fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="builds page fix" />
+    <MESSAGE value="big fixes" />
+    <MESSAGE value="added" />
+    <option name="LAST_COMMIT_MESSAGE" value="added" />
   </component>
 </project>

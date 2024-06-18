@@ -63,20 +63,19 @@ $buildType = $_GET['build_type'] ?? null;
     <section class="products">
         <form action="build-auth.php" method="get" class="search-panel">
             <label><input type="text" id="search-box" name="query" placeholder="поиск..." value="<?= htmlspecialchars($query) ?>"></label>
-            <button id="filter-toggle" class="filter-toggle" type="button">
-                <img src="assets/images/Filter.png" alt="filter">
-            </button>
-            <div id="filters" class="filters" style="display: none;">
-                <button class="quick-filter" name="build_type" value="Игровые" type="submit">Игровые</button>
-                <button class="quick-filter" name="build_type" value="Офисные" type="submit">Офисные</button>
+            <div id="filters" class="filters" style="display: block;">
+                <button class="quick-filter" type="button" onclick="applyBuildTypeFilter('Игровые')">Игровые</button>
+                <button class="quick-filter" type="button" onclick="applyBuildTypeFilter('Офисные')">Офисные</button>
+                <input type="hidden" id="build-type" name="build_type" value="<?= htmlspecialchars($buildType) ?>">
                 <div class="filter-inputs">
-                    <input type="number" id="price-min" name="price_min" placeholder="Цена: от">
-                    <input type="number" id="price-max" name="price_max" placeholder="Цена: до">
+                    <input type="number" id="price-min" name="price_min" placeholder="Цена: от" value="<?= htmlspecialchars($priceMin) ?>">
+                    <input type="number" id="price-max" name="price_max" placeholder="Цена: до" value="<?= htmlspecialchars($priceMax) ?>">
                 </div>
+                <button type="submit" class="apply-filters">Применить</button>
             </div>
-                <a href="build-auth.php" class="delete">
-                    <img src="assets/images/Filter-none.svg" width="13px">Сбросить фильтры
-                </a>
+            <a href="build-auth.php" class="delete">
+                <img src="assets/images/Filter-none.svg" width="13px">Сбросить фильтры
+            </a>
         </form>
         <?php
         // Fetch and display builds
@@ -138,7 +137,6 @@ $buildType = $_GET['build_type'] ?? null;
                         <div class="author-info">
                             Автор: <a href="user-profile.php?user_id=' . htmlspecialchars($row["user_id"]) . '" style="color: black;">' . htmlspecialchars($row["username"]) . '</a>
                         </div>
-                        
                         <span class="thumb-up">
                             <img src="assets/images/Thumb Like.png" alt="Like" class="likeButton" onclick="toggleLike(this,' . htmlspecialchars($row['buildid']) . ')">
                             <span class="counter" id="likes-count-' . htmlspecialchars($row['buildid']) . '">' . htmlspecialchars($row['likes_count']) .'</span>
@@ -172,5 +170,11 @@ $buildType = $_GET['build_type'] ?? null;
     </section>
 </main>
 <script src="assets/scripts/build-auth.js"></script>
+<script>
+    function applyBuildTypeFilter(type) {
+        document.getElementById('build-type').value = type;
+        document.querySelector('.search-panel').submit();
+    }
+</script>
 </body>
 </html>
