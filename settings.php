@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $newName = $_POST['name'] ?: $currentName;
     $newEmail = $_POST['email'] ?: $currentEmail;
-    $newAbout = $_POST['about'] ?: $currentAbout;
+    $newAbout = $_POST['about'] ?? '';
 
     // Обработка загрузки аватарки
     $avatarPath = $currentAvatar;
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['user']['about'] = $newAbout;
     $_SESSION['user']['avatar'] = $avatarPath;
 
-    echo "Информация обновлена";
+    redirect('my-profile.php');
     // Optionally, redirect to a confirmation page or back to the settings page
     // redirect('settings.php');
 }
