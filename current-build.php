@@ -25,6 +25,24 @@ if (!$build) {
     exit;
 }
 
+$favorite = false;
+$liked = false;
+$disliked = false;
+
+if ($currentUser) {
+    $stmt = $pdo->prepare('SELECT * FROM heart WHERE build_id = :build_id AND user_id = :user_id');
+    $stmt->execute(['build_id' => $build_id, 'user_id' => $currentUser['id']]);
+    $favorite = $stmt->fetch() !== false;
+
+    $stmt = $pdo->prepare('SELECT * FROM likes WHERE build_id = :build_id AND user_id = :user_id');
+    $stmt->execute(['build_id' => $build_id, 'user_id' => $currentUser['id']]);
+    $liked = $stmt->fetch() !== false;
+
+    $stmt = $pdo->prepare('SELECT * FROM dislikes WHERE build_id = :build_id AND user_id = :user_id');
+    $stmt->execute(['build_id' => $build_id, 'user_id' => $currentUser['id']]);
+    $disliked = $stmt->fetch() !== false;
+}
+
 $buildType = $build['build_type'] ?? 'Неизвестный тип';
 
 // Handling delete action
@@ -197,16 +215,16 @@ $comments = $commentsQuery->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="product-card">
                     <span class="heart-icon">
-                        <img src="assets/images/heart.svg" width="40px" class="heart"
+                        <img src="assets/images/<?= $favorite ? 'heart-filled.svg' : 'heart.svg' ?>" width="40px" class="heart"
                              onclick="toggleHeart(this, <?= htmlspecialchars($build['buildid']) ?>)">
                     </span>
                     <span class="thumb-up">
-                        <img src="assets/images/Thumb Like.svg" alt="Like" class="likeButton"
-                             onclick="toggleLike(this, <?= htmlspecialchars($build['buildid']) ?>)">
+                      <img src="assets/images/<?= $liked ? 'blacked-up.png' : 'Thumb Like.svg' ?>" alt="Like" class="likeButton" data-build-id="<?= htmlspecialchars($build['buildid']) ?>"
+                           onclick="toggleLikeDislike(this, <?= htmlspecialchars($build['buildid']) ?>, 'like')">
                     </span>
                     <span class="thumb-down">
-                        <img src="assets/images/Thumb Like (1).svg" class="unlikeButton"
-                             onclick="toggleUNLike(this, <?= htmlspecialchars($build['buildid']) ?>)">
+                      <img src="assets/images/<?= $disliked ? 'blacked-down.png' : 'Thumb Like (1).svg' ?>" class="unlikeButton" data-build-id="<?= htmlspecialchars($build['buildid']) ?>"
+                           onclick="toggleLikeDislike(this, <?= htmlspecialchars($build['buildid']) ?>, 'dislike')">
                     </span>
                 </div>
                 <div class="comments-section">

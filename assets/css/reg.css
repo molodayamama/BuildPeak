@@ -285,7 +285,7 @@ body {
     cursor: pointer;
     font-weight: bolder;
     margin-top: 20px;
-    transform: translate(933px,-15px);
+    transform: translate(1160px,-15px);
     border-radius: 10px;
     width: 130px;
     height: 30px;
@@ -362,7 +362,7 @@ input[type="number"] {
     text-decoration: none;
     border: none;
 
-    transform: translate(58px,0px);
+    transform: translate(285px,0px);
 }
 
 .delete img {

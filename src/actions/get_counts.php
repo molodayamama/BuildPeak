@@ -1,22 +1,22 @@
 <?php
 require_once __DIR__ . '/../helpers.php';
 
-header('Content-Type: application/json');
-
-$pdo = getPDO();
 $build_id = $_GET['build_id'] ?? null;
 
 if (!$build_id) {
+    header('HTTP/1.0 400 Bad Request');
     echo json_encode(['error' => 'Invalid build ID']);
     exit;
 }
 
-$stmt = $pdo->prepare('SELECT 
-    (SELECT COUNT(*) FROM likes WHERE build_id = :build_id) as likes,
-    (SELECT COUNT(*) FROM dislikes WHERE build_id = :build_id) as dislikes
-');
-$stmt->execute(['build_id' => $build_id]);
+$pdo = getPDO();
 
-$result = $stmt->fetch(PDO::FETCH_ASSOC);
-echo json_encode($result);
+$likesStmt = $pdo->prepare('SELECT COUNT(*) as likes FROM likes WHERE build_id = :build_id');
+$likesStmt->execute(['build_id' => $build_id]);
+$likes = $likesStmt->fetchColumn();
 
+$dislikesStmt = $pdo->prepare('SELECT COUNT(*) as dislikes FROM dislikes WHERE build_id = :build_id');
+$dislikesStmt->execute(['build_id' => $build_id]);
+$dislikes = $dislikesStmt->fetchColumn();
+
+echo json_encode(['likes' => $likes, 'dislikes' => $dislikes]);

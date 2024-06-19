@@ -6,9 +6,15 @@ $currentUser = currentUser();
 
 // Получение поискового запроса
 $query = $_GET['query'] ?? '';
-$priceMin = $_GET['price_min'] ?? null;
-$priceMax = $_GET['price_max'] ?? null;
-$buildType = $_GET['build_type'] ?? null;
+$priceMin = $_GET['price_min'] ?? '';
+$priceMax = $_GET['price_max'] ?? '';
+$buildType = $_GET['build_type'] ?? '';
+
+$query = htmlspecialchars($query, ENT_QUOTES, 'UTF-8');
+$priceMin = htmlspecialchars($priceMin, ENT_QUOTES, 'UTF-8');
+$priceMax = htmlspecialchars($priceMax, ENT_QUOTES, 'UTF-8');
+$buildType = htmlspecialchars($buildType, ENT_QUOTES, 'UTF-8');
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -130,6 +136,24 @@ $buildType = $_GET['build_type'] ?? null;
         if (!empty($builds)) {
             // Output build data
             foreach ($builds as $row) {
+                $liked = false;
+                $disliked = false;
+                $favorite = false;
+
+                if ($currentUser) {
+                    $stmt = $conn->prepare('SELECT * FROM likes WHERE build_id = :build_id AND user_id = :user_id');
+                    $stmt->execute(['build_id' => $row['buildid'], 'user_id' => $currentUser['id']]);
+                    $liked = $stmt->fetch() !== false;
+
+                    $stmt = $conn->prepare('SELECT * FROM dislikes WHERE build_id = :build_id AND user_id = :user_id');
+                    $stmt->execute(['build_id' => $row['buildid'], 'user_id' => $currentUser['id']]);
+                    $disliked = $stmt->fetch() !== false;
+
+                    $stmt = $conn->prepare('SELECT * FROM heart WHERE build_id = :build_id AND user_id = :user_id');
+                    $stmt->execute(['build_id' => $row['buildid'], 'user_id' => $currentUser['id']]);
+                    $favorite = $stmt->fetch() !== false;
+                }
+
                 echo '<div class="product-card">
                     <div class="card-section left">
                         <img src="' . htmlspecialchars($row['picture']) . '" alt="Изображение сборки" class="pcimage">
@@ -139,12 +163,16 @@ $buildType = $_GET['build_type'] ?? null;
                             Автор: <a href="user-profile.php?user_id=' . htmlspecialchars($row["user_id"]) . '" style="color: black;">' . htmlspecialchars($row["username"]) . '</a>
                         </div>
                         <span class="thumb-up">
-                            <img src="assets/images/Thumb Like.png" alt="Like" class="likeButton" onclick="toggleLike(this,' . htmlspecialchars($row['buildid']) . ')">
-                            <span class="counter" id="likes-count-' . htmlspecialchars($row['buildid']) . '">' . htmlspecialchars($row['likes_count']) .'</span>
+                            <img src="assets/images/' . ($liked ? 'blacked-up.png' : 'Thumb Like.svg') . '"
+                             alt="Like" class="likeButton" data-build-id="' . htmlspecialchars($row['buildid']) . '" 
+                             onclick="toggleLikeDislike(this,' . htmlspecialchars($row['buildid']) . ',\'like\')">
+                             <span class="counter" id="build-likes-count-' . htmlspecialchars($row['buildid']) . '">' . htmlspecialchars($row['likes_count']) .'</span>
                         </span>
                         <span class="thumb-down">
-                            <img src="assets/images/Thumb Like (1).png" class="unlikeButton" onclick="toggleUNLike(this,' . htmlspecialchars($row['buildid']) . ')">
-                            <span class="counter-1" id="dislikes-count-' . htmlspecialchars($row['buildid']) . '">' . htmlspecialchars($row['dislikes_count']) .'</span>
+                            <img src="assets/images/' . ($disliked ? 'blacked-down.png' : 'Thumb Like (1).svg') . '"
+                             class="unlikeButton" data-build-id="' . htmlspecialchars($row['buildid']) . '" 
+                             onclick="toggleLikeDislike(this,' . htmlspecialchars($row['buildid']) . ',\'dislike\')">
+                             <span class="counter-1" id="build-dislikes-count-' . htmlspecialchars($row['buildid']) . '">' . htmlspecialchars($row['dislikes_count']) .'</span>
                         </span>
                     </div>
                     <div class="card-section right">
@@ -176,6 +204,42 @@ $buildType = $_GET['build_type'] ?? null;
         document.getElementById('build-type').value = type;
         document.querySelector('.search-panel').submit();
     }
+    function toggleLikeDislike(element, buildId, action) {
+        fetch(`/src/actions/${action}.php`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ build_id: buildId })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const likeButton = document.querySelector(`.likeButton[data-build-id="${buildId}"]`);
+                const dislikeButton = document.querySelector(`.unlikeButton[data-build-id="${buildId}"]`);
+
+                if (action === 'like') {
+                    element.src = data.liked ? 'assets/images/blacked-up.png' : 'assets/images/Thumb Like.png';
+                    if (data.liked) {
+                        dislikeButton.src = 'assets/images/Thumb Like (1).png';
+                    }
+                } else if (action === 'dislike') {
+                    element.src = data.disliked ? 'assets/images/blacked-down.png' : 'assets/images/Thumb Like (1).png';
+                    if (data.disliked) {
+                        likeButton.src = 'assets/images/Thumb Like.png';
+                    }
+                }
+
+                updateBuildCounts(buildId);
+            })
+            .catch(error => console.error('Error:', error));
+    }
+    // Функция для обновления количества лайков и дизлайков для сборок
+
 </script>
 </body>
 </html>

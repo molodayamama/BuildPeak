@@ -1,38 +1,32 @@
-function toggleLike(button, buildId) {
-  fetch('/src/actions/like.php', {
+// Функция для обработки лайков и дизлайков
+function toggleLikeDislike(element, buildId, action) {
+  fetch(`/src/actions/${action}.php`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ build_id: buildId })
   })
-      .then(response => response.json())
-      .then(data => {
-        if (data.liked !== undefined) {
-          button.src = data.liked ? 'assets/images/blacked-up.png' : 'assets/images/Thumb Like.png';
-          updateCounts(buildId);
-        } else {
-          console.error('Unexpected response:', data);
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
         }
+        return response.json();
       })
-      .catch(error => console.error('Error:', error));
-}
-
-function toggleUNLike(button, buildId) {
-  fetch('/src/actions/dislike.php', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ build_id: buildId })
-  })
-      .then(response => response.json())
       .then(data => {
-        if (data.disliked !== undefined) {
-          button.src = data.disliked ? 'assets/images/blacked-down.png' : 'assets/images/Thumb Like (1).png';
-          updateCounts(buildId);
-        } else {
-          console.error('Unexpected response:', data);
+        const likeButton = document.querySelector(`.likeButton[data-build-id="${buildId}"]`);
+        const dislikeButton = document.querySelector(`.unlikeButton[data-build-id="${buildId}"]`);
+
+        if (action === 'like') {
+          element.src = data.liked ? 'assets/images/blacked-up.png' : 'assets/images/Thumb Like.png';
+          if (data.liked) {
+            dislikeButton.src = 'assets/images/Thumb Like (1).png';
+          }
+        } else if (action === 'dislike') {
+          element.src = data.disliked ? 'assets/images/blacked-down.png' : 'assets/images/Thumb Like (1).png';
+          if (data.disliked) {
+            likeButton.src = 'assets/images/Thumb Like.png';
+          }
         }
       })
       .catch(error => console.error('Error:', error));
@@ -48,8 +42,10 @@ function toggleHeart(element, buildId) {
   })
       .then(response => response.json())
       .then(data => {
+        console.log(data); // Добавьте это для отладки
         if (data.favorite !== undefined) {
-          element.src = data.favorite ? 'assets/images/heart-filled.svg' : 'assets/images/heart.svg';
+          const newSrc = data.favorite ? 'assets/images/heart-filled.svg' : 'assets/images/heart.svg';
+          element.src = newSrc;
         } else {
           console.error('Unexpected response:', data);
         }

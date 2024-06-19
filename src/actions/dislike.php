@@ -49,7 +49,7 @@ $stmt->execute([
 $dislike = $stmt->fetch();
 
 if ($dislike) {
-    // Remove dislike from the build
+    // Remove dislike
     $stmt = $pdo->prepare('DELETE FROM dislikes WHERE build_id = :build_id AND user_id = :user_id');
     $stmt->execute([
         'build_id' => $build_id,
@@ -65,4 +65,3 @@ if ($dislike) {
     ]);
     echo json_encode(['disliked' => true]);
 }
-
