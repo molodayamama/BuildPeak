@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea89448b-ae4c-4cf0-9219-f9bde378a0df" name="Changes" comment="build add fix">
+    <list default="true" id="ea89448b-ae4c-4cf0-9219-f9bde378a0df" name="Changes" comment="About me fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/reg.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/reg.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scripts/build-auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scripts/build-auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/vhod.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/vhod.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/scripts/current.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scripts/current.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/build-auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/current-build.php" beforeDir="false" afterPath="$PROJECT_DIR$/current-build.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/dislike.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/dislike.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/get_counts.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/get_counts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/toggle_favorite.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/toggle_favorite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/toggle_comment_dislike.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/toggle_comment_dislike.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/toggle_comment_like.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/toggle_comment_like.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,27 +38,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "PHP Script.toggle_favorite.php.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "E:/xampp/htdocs/rofls/src/actions",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Db2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;PHP Script.toggle_favorite.php.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/xampp/htdocs/rofls/src/actions&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Db2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\xampp\htdocs\rofls\src\actions" />
@@ -99,7 +95,8 @@
       <workItem from="1718544539882" duration="12179000" />
       <workItem from="1718623261824" duration="12444000" />
       <workItem from="1718710912808" duration="18884000" />
-      <workItem from="1718805039452" duration="10422000" />
+      <workItem from="1718805039452" duration="12745000" />
+      <workItem from="1718824201779" duration="158000" />
     </task>
     <task id="LOCAL-00001" summary="builds page fix">
       <option name="closed" value="true" />
@@ -173,7 +170,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718735360742</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="likes fix">
+      <option name="closed" value="true" />
+      <created>1718818789303</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1718818789303</updated>
+    </task>
+    <task id="LOCAL-00011" summary="About me fix">
+      <option name="closed" value="true" />
+      <created>1718818816836</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718818816836</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +199,8 @@
     <MESSAGE value="search fix" />
     <MESSAGE value="buttons fix" />
     <MESSAGE value="build add fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="build add fix" />
+    <MESSAGE value="likes fix" />
+    <MESSAGE value="About me fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="About me fix" />
   </component>
 </project>

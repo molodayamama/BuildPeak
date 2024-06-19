@@ -27,6 +27,9 @@ require_once __DIR__ . '/src/helpers.php'
             </label>
             <button type="submit" class="register">Вход</button>
         </form>
+        <div class="akk">
+            <p>Ещё нет аккаунта? <a href="login.php" class="in">Зарегистрироваться</a></p>
+        </div>
     </div>
     <img src="assets/images/5264250.jpg" class="pic">
 </div>

@@ -83,3 +83,11 @@ form button:hover {
     height: 1119px;
     transform: translate(60px, 2px);
 }
+
+.akk{
+    transform: translate(30px, 200px);
+}
+
+.in{
+    color:#FF8A00;
+}
