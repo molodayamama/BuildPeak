@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../helpers.php';
 
-session_start();
+
 $currentUser = currentUser();
 if (!$currentUser) {
     echo json_encode(['success' => false, 'error' => 'You must be logged in']);

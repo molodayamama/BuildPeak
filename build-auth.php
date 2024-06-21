@@ -242,7 +242,6 @@ $buildType = htmlspecialchars($buildType, ENT_QUOTES, 'UTF-8');
             .catch(error => console.error('Error:', error));
     }
     // Функция для обновления количества лайков и дизлайков для сборок
-
 </script>
 </body>
 </html>

@@ -77,11 +77,19 @@ function toggleCommentLike(element, commentId) {
     },
     body: JSON.stringify({ comment_id: commentId })
   })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
       .then(data => {
         if (data.liked !== undefined) {
-          element.src = data.liked ? 'assets/images/blacked-up.png' : 'assets/images/Thumb Like.png';
+          const likeButton = element;
           const dislikeButton = document.querySelector(`.commentunLikeButton[data-comment-id='${commentId}']`);
+          if (likeButton) {
+            likeButton.src = data.liked ? 'assets/images/blacked-up.png' : 'assets/images/Thumb Like.png';
+          }
           if (dislikeButton) {
             dislikeButton.src = 'assets/images/Thumb Like (1).png';
           }
@@ -90,7 +98,9 @@ function toggleCommentLike(element, commentId) {
           console.error('Unexpected response:', data);
         }
       })
-      .catch(error => console.error('Error:', error));
+      .catch(error => {
+        console.error('Error:', error.message);
+      });
 }
 
 function toggleCommentDislike(element, commentId) {
@@ -101,11 +111,19 @@ function toggleCommentDislike(element, commentId) {
     },
     body: JSON.stringify({ comment_id: commentId })
   })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
       .then(data => {
         if (data.disliked !== undefined) {
-          element.src = data.disliked ? 'assets/images/blacked-down.png' : 'assets/images/Thumb Like (1).png';
+          const dislikeButton = element;
           const likeButton = document.querySelector(`.commentLikeButton[data-comment-id='${commentId}']`);
+          if (dislikeButton) {
+            dislikeButton.src = data.disliked ? 'assets/images/blacked-down.png' : 'assets/images/Thumb Like (1).png';
+          }
           if (likeButton) {
             likeButton.src = 'assets/images/Thumb Like.png';
           }
@@ -114,27 +132,54 @@ function toggleCommentDislike(element, commentId) {
           console.error('Unexpected response:', data);
         }
       })
-      .catch(error => console.error('Error:', error));
+      .catch(error => {
+        console.error('Error:', error.message);
+      });
 }
 
 function updateCommentCounts(commentId) {
   fetch(`/src/actions/get_comment_counts.php?comment_id=${commentId}`)
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
       .then(data => {
         if (data.success) {
-          element.src = data.liked ? 'assets/images/blacked-up.png' : 'assets/images/Thumb Like.png';
           const likeCountElement = document.querySelector(`#like-count-${commentId}`);
           const dislikeCountElement = document.querySelector(`#dislike-count-${commentId}`);
-
-          likeCountElement.textContent = data.likeCount;
-          dislikeCountElement.textContent = data.dislikeCount;
-
-          // Для дизлайков аналогично, используйте data.disliked и обновите src элемента
+          if (likeCountElement) {
+            likeCountElement.textContent = data.likeCount;
+          }
+          if (dislikeCountElement) {
+            dislikeCountElement.textContent = data.dislikeCount;
+          }
         } else {
           console.error('Unexpected response:', data);
         }
       })
+      .catch(error => {
+        console.error('Error:', error.message);
+      });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.commentLikeButton').forEach(element => {
+    element.addEventListener('click', () => {
+      const commentId = element.dataset.commentId;
+      toggleCommentLike(element, commentId);
+    });
+  });
+
+  document.querySelectorAll('.commentunLikeButton').forEach(element => {
+    element.addEventListener('click', () => {
+      const commentId = element.dataset.commentId;
+      toggleCommentDislike(element, commentId);
+    });
+  });
+});
+
 
 function togglePopup(element) {
   var popup = document.getElementById('popup');

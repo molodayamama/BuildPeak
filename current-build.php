@@ -94,15 +94,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comment_text'])) {
 $commentsQuery = $pdo->prepare("
     SELECT comments.*, users.name AS author_name, users.avatar AS author_avatar,
            (SELECT COUNT(*) FROM comment_likes WHERE comment_likes.comment_id = comments.comment_id) AS like_count,
-           (SELECT COUNT(*) FROM comment_dislikes WHERE comment_dislikes.comment_id = comments.comment_id) AS dislike_count
+           (SELECT COUNT(*) FROM comment_dislikes WHERE comment_dislikes.comment_id = comments.comment_id) AS dislike_count,
+           (SELECT COUNT(*) FROM comment_likes WHERE comment_likes.comment_id = comments.comment_id AND comment_likes.user_id = :user_id) AS user_liked,
+           (SELECT COUNT(*) FROM comment_dislikes WHERE comment_dislikes.comment_id = comments.comment_id AND comment_dislikes.user_id = :user_id) AS user_disliked
     FROM comments
     JOIN users ON comments.user_id = users.id
     WHERE comments.build_id = :build_id
     ORDER BY comments.created_at DESC
 ");
-$commentsQuery->execute(['build_id' => $build_id]);
+$commentsQuery->execute(['build_id' => $build_id, 'user_id' => $currentUser ? $currentUser['id'] : 0]);
 $comments = $commentsQuery->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -250,16 +251,16 @@ $comments = $commentsQuery->fetchAll(PDO::FETCH_ASSOC);
                                         <p><?= htmlspecialchars($comment['comment_text']) ?></p>
                                         <div class="comment-actions">
                                             <span class="thumb-up">
-                                                <img src="assets/images/Thumb Like.svg" alt="Like" class="commentLikeButton"
-                                                     onclick="toggleLike(this, <?= htmlspecialchars($comment['comment_id']) ?>)"
+                                                <img src="assets/images/<?= $comment['user_liked'] ? 'blacked-up.png' : 'Thumb Like.svg' ?>" alt="Like" class="commentLikeButton"
+                                                     onclick="toggleCommentLike(this, <?= htmlspecialchars($comment['comment_id']) ?>)"
                                                      data-comment-id="<?= htmlspecialchars($comment['comment_id']) ?>" width="25px">
                                                 <span class="like-count" id="like-count-<?= htmlspecialchars($comment['comment_id']) ?>">
                                                     <?= htmlspecialchars($comment['like_count']) ?>
                                                 </span>
                                             </span>
                                             <span class="thumb-down">
-                                                <img src="assets/images/Thumb Like (1).svg" class="commentunLikeButton"
-                                                     onclick="toggleUNLike(this, <?= htmlspecialchars($comment['comment_id']) ?>)"
+                                                <img src="assets/images/<?= $comment['user_disliked'] ? 'blacked-down.png' : 'Thumb Like (1).svg' ?>" class="commentunLikeButton"
+                                                     onclick="toggleCommentDislike(this, <?= htmlspecialchars($comment['comment_id']) ?>)"
                                                      data-comment-id="<?= htmlspecialchars($comment['comment_id']) ?>" width="25px">
                                                 <span class="dislike-count" id="dislike-count-<?= htmlspecialchars($comment['comment_id']) ?>">
                                                     <?= htmlspecialchars($comment['dislike_count']) ?>
@@ -307,7 +308,6 @@ $comments = $commentsQuery->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             <?php endif; ?>
         </div>
-
     </section>
 </main>
 <script src="assets/scripts/current.js"></script>
