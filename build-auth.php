@@ -70,7 +70,10 @@ $buildType = htmlspecialchars($buildType, ENT_QUOTES, 'UTF-8');
     <section class="products">
         <form action="build-auth.php" method="get" class="search-panel">
             <label><input type="text" id="search-box" name="query" placeholder="поиск..." value="<?= htmlspecialchars($query) ?>"></label>
-            <div id="filters" class="filters" style="display: block;">
+            <button id="filter-toggle" class="filter-toggle" type="button">
+                <img src="assets/images/Filter.png" alt="filter">
+            </button>
+            <div id="filters" class="filters" style="display: none;">
                 <button class="quick-filter" type="button" onclick="applyBuildTypeFilter('Игровые')">Игровые</button>
                 <button class="quick-filter" type="button" onclick="applyBuildTypeFilter('Офисные')">Офисные</button>
                 <input type="hidden" id="build-type" name="build_type" value="<?= htmlspecialchars($buildType) ?>">

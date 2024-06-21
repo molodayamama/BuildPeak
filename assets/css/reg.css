@@ -285,7 +285,7 @@ body {
     cursor: pointer;
     font-weight: bolder;
     margin-top: 20px;
-    transform: translate(1160px,-15px);
+    transform: translate(930px,-15px);
     border-radius: 10px;
     width: 130px;
     height: 30px;
@@ -362,7 +362,7 @@ input[type="number"] {
     text-decoration: none;
     border: none;
 
-    transform: translate(285px,0px);
+    transform: translate(-255px,0px);
 }
 
 .delete img {
@@ -446,14 +446,14 @@ input[type="number"] {
 }
 
 .thumb-up, .thumb-down {
-    transform: translate(5rem, 7rem);
+    transform: translate(4.5rem, 7rem);
 }
 
 .author-info {
     font-weight: bolder;
     text-align: left;
     margin-top: -15rem;
-    margin-left: -5rem;
+    margin-left: -4.5rem;
 }
 
 .product-details {

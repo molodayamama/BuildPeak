@@ -677,3 +677,8 @@ li {
 .user-controls button:hover {
     background-color: #FF7A00;
 }
+
+.author-comment-info {
+    color: black;
+    text-decoration: none;
+}

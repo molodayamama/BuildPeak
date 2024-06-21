@@ -122,16 +122,18 @@ function updateCommentCounts(commentId) {
       .then(response => response.json())
       .then(data => {
         if (data.success) {
+          element.src = data.liked ? 'assets/images/blacked-up.png' : 'assets/images/Thumb Like.png';
           const likeCountElement = document.querySelector(`#like-count-${commentId}`);
           const dislikeCountElement = document.querySelector(`#dislike-count-${commentId}`);
 
           likeCountElement.textContent = data.likeCount;
           dislikeCountElement.textContent = data.dislikeCount;
+
+          // Для дизлайков аналогично, используйте data.disliked и обновите src элемента
         } else {
           console.error('Unexpected response:', data);
         }
       })
-      .catch(error => console.error('Error:', error));
 }
 
 function togglePopup(element) {

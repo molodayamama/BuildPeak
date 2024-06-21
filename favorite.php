@@ -40,17 +40,30 @@ $likedBuilds = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <a>|</a>
         <a href="description-log.php">О нас</a>
     </nav>
-    <div class="user-info">
-        <div class="author-info" onclick="togglePopup(this)">
-            <button class="nickname"><?= htmlspecialchars($currentUser['name']) ?> <img src="assets/images/Ellipse 5.png" class="userpic" width="30px"></button>
+    <?php if ($currentUser === false) { ?>
+        <div class="user-info">
+            <div class="user-controls">
+                <form action="login.php">
+                    <button class="login-button">Войти</button>
+                </form>
+                <form action="register.php">
+                    <button class="register-button">Регистрация</button>
+                </form>
+            </div>
         </div>
-        <div id="popup" style="display: none;">
-            <a href="my-profile.php">Мой профиль</a>
-            <a href="settings.php">Настройки</a>
-            <a href="favorite.php">Избранное</a>
-            <p><a href="src/actions/logout.php">Выйти</a></p>
+    <?php } else { ?>
+        <div class="user-info">
+            <div class="avthor-info" onclick="togglePopup(this)">
+                <button class="nickname"><?php echo htmlspecialchars($currentUser['name']); ?> <img src="<?= htmlspecialchars($currentUser['avatar'] ?: 'assets/images/Ellipse 5.png') ?>" class="userpic" width="45"></button>
+            </div>
+            <div id="popup" style="display: none;">
+                <a href="my-profile.php">Мой профиль</a>
+                <a href="settings.php">Настройки</a>
+                <a href="favorite.php">Избранное</a>
+                <p><a href="src/actions/logout.php">Выйти</a></p>
+            </div>
         </div>
-    </div>
+    <?php } ?>
 </header>
 <main class="main-content">
     <aside class="sidebar">

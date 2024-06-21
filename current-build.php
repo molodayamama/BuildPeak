@@ -246,7 +246,7 @@ $comments = $commentsQuery->fetchAll(PDO::FETCH_ASSOC);
                                 <li>
                                     <img src="<?= htmlspecialchars($comment['author_avatar'] ?: 'assets/images/Ellipse 5.png') ?>" class="userpic-comment" width="30px">
                                     <div>
-                                        <strong><?= htmlspecialchars($comment['author_name']) ?></strong>
+                                        <strong><a class="author-comment-info" href="user-profile.php?user_id=<?= htmlspecialchars($build['author_id']) ?>"><?= htmlspecialchars($comment['author_name']) ?></a></strong>
                                         <p><?= htmlspecialchars($comment['comment_text']) ?></p>
                                         <div class="comment-actions">
                                             <span class="thumb-up">

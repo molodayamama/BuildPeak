@@ -128,7 +128,7 @@ if ($currentUser === false) {
             </div>
             <div class="product-card">
                 <label for="buildImage" class="button1">+ Загрузить</label>
-                <input type="file" name="buildImage" id="buildImage" style="display: none">
+                <input type="file" name="buildImage" id="buildImage" style="display: none" required>
                 <button class="button2" type="submit">Опубликовать</button>
             </div>
         </div>

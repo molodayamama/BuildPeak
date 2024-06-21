@@ -79,6 +79,7 @@ body {
     margin-left: 1rem;
     vertical-align: middle;
     margin-right: 5px;
+    border-radius: 50%;
 }
 
 #popup {
@@ -283,7 +284,7 @@ body {
     font-weight: bolder;
     text-align: left;
     margin-top: -15rem;
-    margin-left: -5rem;
+    margin-left: -7rem;
 }
 
 .product-details {

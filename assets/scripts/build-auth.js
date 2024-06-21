@@ -117,3 +117,9 @@ window.onclick = function(event) {
     popup.style.display = "none";
   }
 }
+
+document.getElementById('filter-toggle').addEventListener('click', function() {
+  var filters = document.getElementById('filters');
+  filters.style.display = (filters.style.display === 'none' || !filters.style.display) ? 'block' : 'none';
+  this.classList.toggle('rotated');
+});
