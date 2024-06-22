@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comment_text'])) {
 
 // Fetching comments for the build
 $commentsQuery = $pdo->prepare("
-    SELECT comments.*, users.name AS author_name, users.avatar AS author_avatar,
+    SELECT comments.*, users.id AS author_id, users.name AS author_name, users.avatar AS author_avatar,
            (SELECT COUNT(*) FROM comment_likes WHERE comment_likes.comment_id = comments.comment_id) AS like_count,
            (SELECT COUNT(*) FROM comment_dislikes WHERE comment_dislikes.comment_id = comments.comment_id) AS dislike_count,
            (SELECT COUNT(*) FROM comment_likes WHERE comment_likes.comment_id = comments.comment_id AND comment_likes.user_id = :user_id) AS user_liked,
@@ -104,6 +104,7 @@ $commentsQuery = $pdo->prepare("
 ");
 $commentsQuery->execute(['build_id' => $build_id, 'user_id' => $currentUser ? $currentUser['id'] : 0]);
 $comments = $commentsQuery->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -247,7 +248,7 @@ $comments = $commentsQuery->fetchAll(PDO::FETCH_ASSOC);
                                 <li>
                                     <img src="<?= htmlspecialchars($comment['author_avatar'] ?: 'assets/images/Ellipse 5.png') ?>" class="userpic-comment" width="30px">
                                     <div>
-                                        <strong><a class="author-comment-info" href="user-profile.php?user_id=<?= htmlspecialchars($build['author_id']) ?>"><?= htmlspecialchars($comment['author_name']) ?></a></strong>
+                                        <strong><a class="author-comment-info" href="user-profile.php?user_id=<?= htmlspecialchars($comment['author_id']) ?>"><?= htmlspecialchars($comment['author_name']) ?></a></strong>
                                         <p><?= htmlspecialchars($comment['comment_text']) ?></p>
                                         <div class="comment-actions">
                                             <span class="thumb-up">
